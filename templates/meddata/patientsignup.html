@@ -1,0 +1,98 @@
+{% extends 'meddata/homebase.html' %}
+{%load static %}
+{%block content%}
+{% load widget_tweaks %}
+<head>
+ <link rel="stylesheet" href="{%static 'patientsignupstyles.css'%}">
+</head>
+
+
+
+
+<body>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="col-2">
+      <label>
+        First Name
+        {% render_field userForm.first_name class="form-control" placeholder="First Name" %}
+      </label>
+    </div>
+    <div class="col-2">
+      <label>
+        Last Name
+
+        {% render_field userForm.last_name class="form-control" placeholder="Last Name" %}
+      </label>
+
+    </div>
+    <div class="col-2">
+      <label>
+        Username
+        {% render_field userForm.username class="form-control" placeholder="Username" %}
+      </label>
+
+    </div>
+
+    <div class="col-2">
+      <label>
+        Address
+
+        {% render_field patientForm.address class="form-control" placeholder="Address" %}
+      </label>
+
+    </div>
+    
+    <div class="col-2">
+      <label>
+       Symptoms
+        {% render_field patientForm.symptoms class="form-control" placeholder="Symptoms" %}
+      </label>
+
+    </div>
+
+    <div class="col-2">
+      <label>
+        Password
+
+        {% render_field userForm.password class="form-control" placeholder="Password" %}
+      </label>
+
+    </div>
+
+    <div class="col-2">
+      <label>
+        Assigned Doctor
+        {% render_field patientForm.assignedDoctorId class="form-control" placeholder="Doctor" %}
+      </label>
+    </div>
+  
+    <div class="col-2">
+      <label>
+        Phone
+        {% render_field patientForm.mobile class="form-control" pattern="[6789][0-9]{9}" placeholder="Contact Number" %}
+      </label>
+    </div>
+
+    <div class="col-2">
+      <label>
+        Profile Picture
+        {% render_field patientForm.profile_pic required="required" class="form-control" placeholder="Profile Picture" %}
+        <br>
+      </label>
+    </div>
+    
+    
+    <div class="col-submit">
+      <button type="submit" class="btnSubmit">Register</button>
+          <div class="text-center">Already have an account? <a href="patientlogin">Login here</a></div>
+    </div>
+  </form>
+
+  {% include "meddata/footer.html" %}
+</body>
+
+
+</html>
+{%endblock content%}
