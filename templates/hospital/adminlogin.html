@@ -1,0 +1,81 @@
+{% extends 'hospital/homebase.html' %}
+{%load static %}
+{%block content%}
+{% load widget_tweaks %}
+<head>
+  <link rel="stylesheet" href="{%static 'patientsignupstyles.css'%}">
+</head>
+
+
+<body>
+  
+  <br>
+  <br>
+  <br><br>
+
+  <!--<form method="post">
+    {% csrf_token %}
+    <div class="container register-form">
+      <div class="form">
+        <div class="note">
+          <p>Admin Login Page</p>
+        </div>
+
+        <div class="form-content">
+          <div class="row">
+            <div class="col-md-6">
+
+              <div class="form-group">
+                {% render_field form.username class="form-control" placeholder="Username" %}
+              </div>
+
+            </div>
+            <div class="col-md-6">
+
+              <div class="form-group">
+                {% render_field form.password class="form-control" placeholder="Password" %}
+              </div>
+
+            </div>
+          </div>
+          <button type="submit" class="btnSubmit">Login</button>
+          <div class="text-center">Do not have account? <a href="adminsignup">Signup here</a></div>
+        </div>
+      </div>
+    </div>
+
+  </form>-->
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="col-2">
+      <label>
+        Username
+        {% render_field form.username class="form-control" placeholder="Username" %}
+      </label>
+    </div>
+    <div class="col-2">
+      <label>
+        Password
+
+        {% render_field form.password class="form-control" placeholder="Password" %}
+      </label>
+    </div>
+
+    
+    
+    
+    <div class="col-submit">
+      <button type="submit" class="btnSubmit">Login</button>
+          <div class="text-center">Do not have account? <a href="adminsignup">Signup here</a></div>
+    </div>
+  </form>
+
+  <br><br><br>
+  
+
+  
+</body>
+
+</html>
+{%endblock content%}

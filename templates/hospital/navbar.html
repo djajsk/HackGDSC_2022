@@ -1,0 +1,15 @@
+{% load static %}
+<header class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a href = "/index" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <img style="height: 45px;" src="{% static 'images/icon.png' %}">
+      <span class="ml-3 text-xl">MedData</span>
+    </a>
+    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+      <a class="mr-5 hover:text-gray-900" href="/adminclick">Admin</a>
+      <a class="mr-5 hover:text-gray-900" href="/doctorclick">Doctor</a>
+      <a class="mr-5 hover:text-gray-900" href="/patientclick">Patient</a>
+      <a class = "mr-5 hover:text-gray-900" href="/aboutus">About Us</a>
+    </nav>
+  </div>
+</header>
