@@ -50,6 +50,9 @@ def admin_signup_view(request):
             return HttpResponseRedirect('adminlogin')
     return render(request,'meddata/adminsignup.html',{'form':form})
 
+
+
+
 def doctor_signup_view(request):
     userForm=forms.DoctorUserForm()
     doctorForm=forms.DoctorForm()
